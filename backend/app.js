@@ -20,7 +20,14 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(fileUpload())
 
 
-app.use(cors())
+app.use(
+  cors({
+    origin: "https://oyefill.vercel.app/",
+    Credential: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["content-type", "Authorization"],
+  })
+);
 app.use("/user",UserRouter);
 app.use("/contact",ContactRouter);
 app.use("/category", CategoryRouter);

@@ -1,10 +1,10 @@
-export const __userapiurl = "http://localhost:3000/user/";
+export const __userapiurl = "https://oyefill.onrender.com/user/";
 
-export const __contactapiurl = "http://localhost:3000/contact/";
+export const __contactapiurl = "https://oyefill.onrender.com/contact/";
 
-export const __categoryapiurl = "http://localhost:3000/category/";
+export const __categoryapiurl = "https://oyefill.onrender.com/category/";
 
-export const __formapiurl = "http://localhost:3000/forms/";
+export const __formapiurl = "https://oyefill.onrender.com/forms/";
 
 
-export const __alertapiurl = "http://localhost:3000/alert/";
+export const __alertapiurl = "https://oyefill.onrender.com/alert/";

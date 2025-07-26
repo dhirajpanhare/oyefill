@@ -33,6 +33,8 @@ app.use("/contact",ContactRouter);
 app.use("/category", CategoryRouter);
 app.use("/alert",AlertRouter);
 app.use("/forms",FormRouter);
-app.listen(3000);
+const PORT = process.env.PORT || 3001;
 
-console.log("server started at url http://localhost:3000/");
+app.listen(PORT, () => {
+  console.log(`Server invoked at port ${PORT}`);
+});

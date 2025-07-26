@@ -16,7 +16,7 @@ const Navbar = () => {
 
                 setHeader(
                      <header>
-           <Link to="https://oyefill.vercel.app/adminhome"><img src="/public/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
+           <Link to="https://oyefill.vercel.app/adminhome"><img src="https://oyefill.vercel.app/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
             <div className={`nav-options ${menuOpen ? "active" : ""}`}>
   <Link to="https://oyefill.vercel.app/adminhome" className='nav-item'>Admin Home</Link>
                <Link to="https://oyefill.vercel.app/manageusers" className='nav-item'>ManageUsers</Link>
@@ -40,7 +40,7 @@ const Navbar = () => {
             
             setHeader(
                  <header>
-           <Link to="https://oyefill.vercel.app/"><img src="/public/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
+           <Link to="https://oyefill.vercel.app/"><img src="https://oyefill.vercel.app/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
             <div className="nav-options">
              <Link to="https://oyefill.vercel.app/" className='nav-item'>Home</Link>
                   <Link to="https://oyefill.vercel.app/about" className='nav-item'>About</Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
             else{
                 setHeader(
                      <header>
-           <Link to="https://oyefill.vercel.app/"><img src="/public/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
+           <Link to="https://oyefill.vercel.app/"><img src="https://oyefill.vercel.app/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
            
             <div className={`nav-options ${menuOpen ? 'active' : ''}`}>
              <Link to="https://oyefill.vercel.app/" className='nav-item'>Home</Link>

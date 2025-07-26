@@ -4,7 +4,7 @@ function Banner() {
         <>
         <div className="banner">
             <div className="b-image">
-                <img src="public/assets/images/registration-form.png" alt="" />
+                <img src="https://oyefill.vercel.app/assets/images/registration-form.png" alt="" />
             </div>
 
             <div className="content">

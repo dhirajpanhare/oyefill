@@ -36,7 +36,7 @@ function Category() {
                   <Link to={`/cat/${row.catName}`}>
                 <div className="category" key={row._id}>
            
-                    <img src={`/assets/uploads/categoryicons/${row.caticonnm}`} alt="" />
+                    <img src={`https://oyefill.vercel.app/assets/uploads/categoryicons/${row.caticonnm}`} alt="" />
                     <h4 className="">{row.catName}</h4>
                 </div>
                 </Link>

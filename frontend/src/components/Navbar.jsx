@@ -16,18 +16,18 @@ const Navbar = () => {
 
                 setHeader(
                      <header>
-           <Link to="/adminhome"><img src="assets/images/logo.png" alt="logo-image" id='logo' /></Link>
+           <Link to="https://oyefill.vercel.app/adminhome"><img src="/public/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
             <div className={`nav-options ${menuOpen ? "active" : ""}`}>
-  <Link to="/adminhome" className='nav-item'>Admin Home</Link>
-               <Link to="/manageusers" className='nav-item'>ManageUsers</Link>
-               <Link to="/addcategory" className='nav-item'>ManageCategory</Link>
-                <Link to="/manageforms" className='nav-item'>ManageForms</Link>
-              <Link to="/addalert" className='nav-item'>AddAlert</Link>
-              <Link to="/messages" className='nav-item'>Messages</Link>
+  <Link to="https://oyefill.vercel.app/adminhome" className='nav-item'>Admin Home</Link>
+               <Link to="https://oyefill.vercel.app/manageusers" className='nav-item'>ManageUsers</Link>
+               <Link to="https://oyefill.vercel.app/addcategory" className='nav-item'>ManageCategory</Link>
+                <Link to="https://oyefill.vercel.app/manageforms" className='nav-item'>ManageForms</Link>
+              <Link to="https://oyefill.vercel.app/addalert" className='nav-item'>AddAlert</Link>
+              <Link to="https://oyefill.vercel.app/messages" className='nav-item'>Messages</Link>
             </div>
 
             <div className="buttons">
-                   <Link to="/logout"><button>logout</button></Link>
+                   <Link to="https://oyefill.vercel.app/logout"><button>logout</button></Link>
             </div>
   <div className="menu" onClick={toggleMenu}>
                             <i className="fa-solid fa-bars"></i>
@@ -40,14 +40,14 @@ const Navbar = () => {
             
             setHeader(
                  <header>
-           <Link to="/"><img src="/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
+           <Link to="https://oyefill.vercel.app/"><img src="/public/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
             <div className="nav-options">
-             <Link to="/" className='nav-item'>Home</Link>
-                  <Link to="/about" className='nav-item'>About</Link>
-                  <Link to="/form" className='nav-item'>Forms</Link>
-                 <Link to="/alerts" className='nav-item'>Alerts</Link>
+             <Link to="https://oyefill.vercel.app/" className='nav-item'>Home</Link>
+                  <Link to="https://oyefill.vercel.app/about" className='nav-item'>About</Link>
+                  <Link to="https://oyefill.vercel.app/form" className='nav-item'>Forms</Link>
+                 <Link to="https://oyefill.vercel.app/alerts" className='nav-item'>Alerts</Link>
              
-               <Link to="/contact" className='nav-item'>Contact</Link>
+               <Link to="https://oyefill.vercel.app/contact" className='nav-item'>Contact</Link>
             </div>
 
             <div className="buttons">
@@ -66,16 +66,16 @@ const Navbar = () => {
             else{
                 setHeader(
                      <header>
-           <Link to="/"><img src="/public/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
+           <Link to="https://oyefill.vercel.app/"><img src="/public/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
            
             <div className={`nav-options ${menuOpen ? 'active' : ''}`}>
-             <Link to="/" className='nav-item'>Home</Link>
+             <Link to="https://oyefill.vercel.app/" className='nav-item'>Home</Link>
 
 
-                  <Link to="/about" className='nav-item'>About</Link>
-                  <Link to="/form" className='nav-item'>Forms</Link>
-                 <Link to="/alerts" className='nav-item'>Alerts</Link>
-               <Link to="/contact" className='nav-item'>Contact</Link>
+                  <Link to="https://oyefill.vercel.app/about" className='nav-item'>About</Link>
+                  <Link to="https://oyefill.vercel.app/form" className='nav-item'>Forms</Link>
+                 <Link to="https://oyefill.vercel.app/alerts" className='nav-item'>Alerts</Link>
+               <Link to="https://oyefill.vercel.app/contact" className='nav-item'>Contact</Link>
               
             </div>
 

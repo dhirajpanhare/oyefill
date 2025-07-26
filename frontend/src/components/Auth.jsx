@@ -7,10 +7,10 @@ function Auth()
 
     useEffect(()=>{
      var path=window.location.pathname;
-     if(path=="/adminhome" || path=="/manageusers" || path=="/addcategory")
+     if(path=="https://oyefill.vercel.app/adminhome" || path=="https://oyefill.vercel.app/manageusers" || path=="https://oyefill.vercel.app/addcategory")
      {
       if(!localStorage.getItem("token") || localStorage.getItem("role")!="admin")   
-        navigate("/logout");
+        navigate("https://oyefill.vercel.app/logout");
     }
      
   

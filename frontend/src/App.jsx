@@ -30,20 +30,20 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
 
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/register' element={<Register />}></Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/logout' element={<Logout />}></Route>
-          <Route path='/adminhome' element={<AdminHome />}></Route>
-          <Route path='/manageusers' element={<ManageUsers/>}></Route>
-          <Route path='/addcategory' element={<AddCategory/>}></Route>
-          <Route path='/alerts' element={<Alerts/>}></Route>
-          <Route path='/contact' element={<Contact/>}></Route>
-          <Route path='/addalert' element={<AddAlert/>}></Route>
-          <Route path='/manageforms' element={<ManageForms/>}></Route>
-          <Route path='/cat/:catName' element={<Cat/>}></Route>
-          <Route path='/form' element={<Forms/>}></Route>
-          <Route path='/messages' element={<Messages/>}></Route>
+          <Route path='https://oyefill.vercel.app/about' element={<About />}></Route>
+          <Route path='https://oyefill.vercel.app/register' element={<Register />}></Route>
+          <Route path='https://oyefill.vercel.app/login' element={<Login />}></Route>
+          <Route path='https://oyefill.vercel.app/logout' element={<Logout />}></Route>
+          <Route path='https://oyefill.vercel.app/adminhome' element={<AdminHome />}></Route>
+          <Route path='https://oyefill.vercel.app/manageusers' element={<ManageUsers/>}></Route>
+          <Route path='https://oyefill.vercel.app/addcategory' element={<AddCategory/>}></Route>
+          <Route path='https://oyefill.vercel.app/alerts' element={<Alerts/>}></Route>
+          <Route path='https://oyefill.vercel.app/contact' element={<Contact/>}></Route>
+          <Route path='https://oyefill.vercel.app/addalert' element={<AddAlert/>}></Route>
+          <Route path='https://oyefill.vercel.app/manageforms' element={<ManageForms/>}></Route>
+          <Route path='https://oyefill.vercel.app/cat/:catName' element={<Cat/>}></Route>
+          <Route path='https://oyefill.vercel.app/form' element={<Forms/>}></Route>
+          <Route path='https://oyefill.vercel.app/messages' element={<Messages/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

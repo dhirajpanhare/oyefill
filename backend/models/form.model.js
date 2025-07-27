@@ -21,7 +21,7 @@ const formSchema = mongoose.Schema ({
         trim:true,
 
     },
-    desciption: {
+    description: {
         type:String,
         trim:true,
         lowercase:true,

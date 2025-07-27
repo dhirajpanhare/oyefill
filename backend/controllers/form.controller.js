@@ -19,7 +19,7 @@ export const save = async (req, res) => {
 // -------- FETCH by CATEGORY --------
 export const fetch = async (req, res) => {
   try {
-    const catName = req.params.catName.toLowerCase(); // ensure case match
+    const catName = req.params.catName;// ensure case match
     const forms = await formSchemaModel.find({ catName });
 
     res.status(200).json(forms);

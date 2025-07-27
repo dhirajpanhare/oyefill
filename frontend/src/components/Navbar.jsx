@@ -63,7 +63,7 @@ const Navbar = () => {
     } else if (token && role === 'user') {
       return (
         <div className="buttons">
-          <button>{name}</button>
+          <button>{name[0]}</button>
           <Link to="/logout"><button>Logout</button></Link>
         </div>
       );

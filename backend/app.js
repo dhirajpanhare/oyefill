@@ -33,7 +33,9 @@ app.use("/contact",ContactRouter);
 app.use("/category", CategoryRouter);
 app.use("/alert",AlertRouter);
 app.use("/forms",FormRouter);
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
+
+console.log(process.env.PORT)
 
 app.listen(PORT, () => {
   console.log(`Server invoked at port ${PORT}`);

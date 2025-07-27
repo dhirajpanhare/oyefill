@@ -16,7 +16,10 @@ import FormRouter from './routers/form.router.js';
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(fileUpload());
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
 
 // CORS config
 app.use(

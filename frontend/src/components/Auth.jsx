@@ -1,24 +1,23 @@
-    import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react'; 
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
-function Auth()
-{
-    const navigate = useNavigate();
+function Auth() {
+  const navigate = useNavigate();
+  const location = useLocation(); // better than window.location
+  const path = location.pathname;
 
-    useEffect(()=>{
-     var path=window.location.pathname;
-     if(path=="https://oyefill.vercel.app/adminhome" || path=="https://oyefill.vercel.app/manageusers" || path=="https://oyefill.vercel.app/addcategory")
-     {
-      if(!localStorage.getItem("token") || localStorage.getItem("role")!="admin")   
-        navigate("/logout");
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const role = localStorage.getItem("role");
+
+    const adminPaths = ["/adminhome", "/manageusers", "/addcategory"];
+
+    if (adminPaths.includes(path)) {
+      if (!token || role !== "admin") navigate("/logout");
     }
-     
-  
-    });
-   
-    return(
-        <></>
-    )
+  }, [location, navigate]); 
+
+  return null;
 }
 
 export default Auth;

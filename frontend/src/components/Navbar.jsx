@@ -1,105 +1,102 @@
-import { useState  ,useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Auth from '../components/Auth';
+
 const Navbar = () => {
-    const [HeaderContent, setHeader] = useState();
-    const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [role, setRole] = useState('');
+  const [token, setToken] = useState('');
+  const [name, setName] = useState('');
 
-    const toggleMenu = () => {
-        setMenuOpen(prev => !prev);
-    
-    };
-    useEffect(()=>{
-        
-        setInterval(()=>{
-            if(localStorage.getItem("token")!=undefined &&  localStorage.getItem("role")=="admin"){
+  useEffect(() => {
+    setToken(localStorage.getItem('token'));
+    setRole(localStorage.getItem('role'));
+    setName(localStorage.getItem('name'));
+  }, []);
 
-                setHeader(
-                     <header>
-           <Link to="https://oyefill.vercel.app/adminhome"><img src="https://oyefill.vercel.app/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
-            <div className={`nav-options ${menuOpen ? "active" : ""}`}>
-  <Link to="https://oyefill.vercel.app/adminhome" className='nav-item'>Admin Home</Link>
-               <Link to="https://oyefill.vercel.app/manageusers" className='nav-item'>ManageUsers</Link>
-               <Link to="https://oyefill.vercel.app/addcategory" className='nav-item'>ManageCategory</Link>
-                <Link to="https://oyefill.vercel.app/manageforms" className='nav-item'>ManageForms</Link>
-              <Link to="https://oyefill.vercel.app/addalert" className='nav-item'>AddAlert</Link>
-              <Link to="https://oyefill.vercel.app/messages" className='nav-item'>Messages</Link>
-            </div>
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev);
+  };
 
-            <div className="buttons">
-                   <Link to="https://oyefill.vercel.app/logout"><button>logout</button></Link>
-            </div>
-  <div className="menu" onClick={toggleMenu}>
-                            <i className="fa-solid fa-bars"></i>
-                        </div>
-        </header>
-                )
-            }
-          else if(localStorage.getItem("token")!=undefined &&  localStorage.getItem("role")=="user")
-          {
-            
-            setHeader(
-                 <header>
-           <Link to="https://oyefill.vercel.app/"><img src="https://oyefill.vercel.app/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
-            <div className="nav-options">
-             <Link to="https://oyefill.vercel.app/" className='nav-item'>Home</Link>
-                  <Link to="https://oyefill.vercel.app/about" className='nav-item'>About</Link>
-                  <Link to="https://oyefill.vercel.app/form" className='nav-item'>Forms</Link>
-                 <Link to="https://oyefill.vercel.app/alerts" className='nav-item'>Alerts</Link>
-             
-               <Link to="https://oyefill.vercel.app/contact" className='nav-item'>Contact</Link>
-            </div>
-
-            <div className="buttons">
-                <button>
-                   
-                    {localStorage.getItem('name')}</button>
-                <Link to="/logout"><button>logout</button></Link>
-
-            </div>
-             <div className="menu" onClick={toggleMenu}>
-                            <i className="fa-solid fa-bars"></i>
-                        </div>
-        </header>
-            )
-          }
-            else{
-                setHeader(
-                     <header>
-           <Link to="https://oyefill.vercel.app/"><img src="https://oyefill.vercel.app/assets/images/logo.png" alt="logo-image" id='logo' /></Link>
-           
-            <div className={`nav-options ${menuOpen ? 'active' : ''}`}>
-             <Link to="https://oyefill.vercel.app/" className='nav-item'>Home</Link>
-
-
-                  <Link to="https://oyefill.vercel.app/about" className='nav-item'>About</Link>
-                  <Link to="https://oyefill.vercel.app/form" className='nav-item'>Forms</Link>
-                 <Link to="https://oyefill.vercel.app/alerts" className='nav-item'>Alerts</Link>
-               <Link to="https://oyefill.vercel.app/contact" className='nav-item'>Contact</Link>
-              
-            </div>
-
-            <div className="buttons">
-
-                <Link to="/login"><button>Login</button></Link>
-               <Link to="/register"> <button>Register</button></Link>
-            </div>
-             <div className="menu" onClick={toggleMenu}>
-                            <i className="fa-solid fa-bars"></i>
-                        </div>
-        </header>
-                )
-            }
-        },1)
-    },[])
-    return (
-
-        
+  const renderLinks = () => {
+    if (token && role === 'admin') {
+      return (
         <>
-       {<Auth/>}
-        {HeaderContent}
-    
+          <Link to="/adminhome" className="nav-item">Admin Home</Link>
+          <Link to="/manageusers" className="nav-item">ManageUsers</Link>
+          <Link to="/addcategory" className="nav-item">ManageCategory</Link>
+          <Link to="/manageforms" className="nav-item">ManageForms</Link>
+          <Link to="/addalert" className="nav-item">AddAlert</Link>
+          <Link to="/messages" className="nav-item">Messages</Link>
         </>
-    )
-}
+      );
+    } else if (token && role === 'user') {
+      return (
+        <>
+          <Link to="/" className="nav-item">Home</Link>
+          <Link to="/about" className="nav-item">About</Link>
+          <Link to="/form" className="nav-item">Forms</Link>
+          <Link to="/alerts" className="nav-item">Alerts</Link>
+          <Link to="/contact" className="nav-item">Contact</Link>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Link to="/" className="nav-item">Home</Link>
+          <Link to="/about" className="nav-item">About</Link>
+          <Link to="/form" className="nav-item">Forms</Link>
+          <Link to="/alerts" className="nav-item">Alerts</Link>
+          <Link to="/contact" className="nav-item">Contact</Link>
+        </>
+      );
+    }
+  };
+
+  const renderButtons = () => {
+    if (token && role === 'admin') {
+      return (
+        <div className="buttons">
+          <Link to="/logout"><button>Logout</button></Link>
+        </div>
+      );
+    } else if (token && role === 'user') {
+      return (
+        <div className="buttons">
+          <button>{name}</button>
+          <Link to="/logout"><button>Logout</button></Link>
+        </div>
+      );
+    } else {
+      return (
+        <div className="buttons">
+          <Link to="/login"><button>Login</button></Link>
+          <Link to="/register"><button>Register</button></Link>
+        </div>
+      );
+    }
+  };
+
+  return (
+    <>
+      <Auth />
+      <header>
+        <Link to="/">
+          <img src="https://oyefill.vercel.app/assets/images/logo.png" alt="logo-image" id="logo" />
+        </Link>
+
+        <div className={`nav-options ${menuOpen ? 'show' : ''}`}>
+          {renderLinks()}
+        </div>
+
+        {renderButtons()}
+
+        <div className="menu" onClick={toggleMenu}>
+          <i className="fa-solid fa-bars"></i>
+        </div>
+      </header>
+    </>
+  );
+};
+
 export default Navbar;

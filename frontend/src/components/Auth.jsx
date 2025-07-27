@@ -10,7 +10,7 @@ function Auth()
      if(path=="https://oyefill.vercel.app/adminhome" || path=="https://oyefill.vercel.app/manageusers" || path=="https://oyefill.vercel.app/addcategory")
      {
       if(!localStorage.getItem("token") || localStorage.getItem("role")!="admin")   
-        navigate("https://oyefill.vercel.app/logout");
+        navigate("/logout");
     }
      
   

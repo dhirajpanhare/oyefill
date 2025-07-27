@@ -14,6 +14,7 @@ const Cat = () => {
       try {
         const res = await axios.get(`${__formapiurl}cat/${catName}`);
         setForms(res.data);
+        console.log(res.data)
       } catch (error) {
         console.error("Error fetching category forms:", error);
       } finally {
@@ -43,7 +44,7 @@ const Cat = () => {
             <p>{row.description}</p>
 
             <span>Price</span>
-            <p className="price">₹{parseFloat(row.formPrice).toFixed(2)}</p>
+            <p className="price">₹{row.formPrice}</p>
 
             <a href={row.nLink} target="_blank" rel="noopener noreferrer">
               <button className="r-btn">Notification Link</button>

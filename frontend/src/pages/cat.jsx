@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const Goverment = () => {
+const Cat = () => {
   const { catName } = useParams();
   const [forms, setForms] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -47,4 +47,4 @@ const Goverment = () => {
   );
 };
 
-export default Goverment;
+export default Cat;

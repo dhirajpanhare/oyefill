@@ -3,27 +3,27 @@ import uniqueValidator from 'mongoose-unique-validator';
 
 const CategorySchema = mongoose.Schema({
   _id: Number,
- catName: {
+
+  catName: {
     type: String,
-    required: [true,"Category name is required"],
-    lowercase: true,
+    required: [true, "Category name is required"],
+    lowercase: true, 
     trim: true,
+    unique: true, // optional: prevent duplicates
   },
+
   caticonnm: {
     type: String,
-    required: [true,"Category icon name is required"],
-    lowercase: true,
-    trim: true
+    required: [true, "Category icon URL is required"],
+    trim: true,
+
   }
 });
 
-// Apply the uniqueValidator plugin to CategorySchema.
+// Apply the uniqueValidator plugin to enforce `unique: true`
 CategorySchema.plugin(uniqueValidator);
 
-// compile schema to model
-const CategorySchemaModel = mongoose.model('category_collections',CategorySchema);
+// Compile schema to model
+const CategorySchemaModel = mongoose.model('category_collections', CategorySchema);
 
 export default CategorySchemaModel;
-
-
-

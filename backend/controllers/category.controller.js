@@ -1,10 +1,16 @@
 import "../models/connection.js";
 import url from 'url';
-import path from 'path';
-import fs from 'fs';
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-
+import { v2 as cloudinary } from 'cloudinary';
+import dotenv from 'dotenv';
+dotenv.config();
 import CategorySchemaModel from "../models/category.model.js";
+
+// ✅ Cloudinary inline config
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
 
 // ---------------- SAVE ----------------
 export const save = async (req, res) => {
@@ -13,25 +19,28 @@ export const save = async (req, res) => {
     const l = category.length;
     const _id = l === 0 ? 1 : category[l - 1]._id + 1;
 
-    // Check if file exists
     if (!req.files || !req.files.caticon) {
       return res.status(400).json({ status: false, message: "No file uploaded" });
     }
 
     const caticon = req.files.caticon;
-    const caticonnm = Date.now() + "-" + caticon.name;
-    const uploadpath = path.join(__dirname, "../../frontend/public/assets/uploads/categoryicons", caticonnm);
 
-    // Save file
-    await caticon.mv(uploadpath);
+    // ✅ Upload to Cloudinary (no config file needed)
+    const result = await cloudinary.uploader.upload(caticon.tempFilePath, {
+      folder: "oyefill_category_icons"
+    });
 
-    const cDetails = { ...req.body, _id, caticonnm };
+    const cDetails = {
+      ...req.body,
+      _id,
+      caticonnm: result.secure_url // ✅ save Cloudinary image URL
+    };
+
     await CategorySchemaModel.create(cDetails);
-
-    res.status(201).json({ status: true });
+    res.status(201).json({ status: true, url: result.secure_url });
   } catch (error) {
     console.error("Error in category/save:", error.message);
-    res.status(500).json({ status: false });
+    res.status(500).json({ status: false, message: error.message });
   }
 };
 

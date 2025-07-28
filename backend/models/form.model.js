@@ -28,7 +28,6 @@ const formSchema = mongoose.Schema ({
     },
     nLink: {
         type:String,
-      
         trim:true,
         lowercase:true,
     },

@@ -80,7 +80,7 @@ if (action === "delete") {
                         }
                     </select>
                     <p>Form Description</p>
-                    <textarea placeholder="Enter Form Description . . ." value={description} 
+                    <textarea placeholder="Enter Form Description . . ." value={description}
                     onChange={(e)=> setDescription(e.target.value)}></textarea>
                     <p>Form Price</p>
                     <input type="text" placeholder="Enter Form Price . . ."

@@ -44,7 +44,7 @@ if (action === "delete") {
 
     const handleSubmit = async () => {
 
-        const formDetails = { formName,catName, formPrice, description, nLink, fLink };
+        const formDetails = { formName,catName, formPrice, description ,nLink, fLink };
         setLoading(true);
 
         await axios.post(__formapiurl + 'save', formDetails).then(() => {

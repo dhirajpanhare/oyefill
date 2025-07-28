@@ -93,7 +93,7 @@ if (action === "delete") {
                         <tr key={row._id}>
                             <td>{index+1}</td>
                             <td>{row.catName}</td>
-                            <td><img src={`/assets/uploads/categoryicons/${row.caticonnm}`} alt="" height={"50px"}/></td>
+                            <td><img src={row.caticonnm} alt="" height={"50px"}/></td>
                           
                            
                           

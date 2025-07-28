@@ -308,17 +308,15 @@ footer {
   color: var(--text-color);
   padding: 50px 20px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   gap: 30px;
   font-family: var(--font-alt);
   height: auto;
 }
 
-footer .sec {
-  flex: 1 1 250px;
+.sec {
   min-width: 200px;
-  text-align: center;
+  display: block;
 }
 
 footer .bottom {
@@ -517,7 +515,7 @@ footer a:hover {
     width: 100%;
     justify-content: center;
   }
-  .footer .sec {
+  footer .sec {
     flex: 1 1 100%;
   }
 }
@@ -621,7 +619,7 @@ footer a:hover {
   }
 
   .timeline-box {
-    width: 90%;
+    width: 80%;
   }
 }
 
@@ -760,7 +758,10 @@ footer a:hover {
   }
 
   .timeline-box {
-    padding: 15px;
+    padding: 10px;
+  }
+  .timeline{
+    width: 80%;
   }
 
   .about-section {
@@ -768,12 +769,12 @@ footer a:hover {
     font-size: 13px;
   }
 
-  .footer {
+  footer {
     flex-direction: column;
     align-items: center;
   }
 
-  .footer .sec {
+  footer .sec {
     width: 100%;
     margin-bottom: 20px;
   }

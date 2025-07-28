@@ -8,7 +8,7 @@
       const l =users.length;
       const _id=l==0?1:users[l-1]._id+1;
 
-      const userDetails= {...req.body,"_id":_id,"role":"user","status":0,"info":Date()}
+      const userDetails= {...req.body,"_id":_id,"role":"user","status":1,"info":Date()}
 
       try{
           await userSchemaModel.create(userDetails);
